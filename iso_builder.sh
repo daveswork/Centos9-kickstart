@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BOOT_ISO=/tmp/boot.iso
-BASEOS_ISO=/tmp/CentOS-Stream-8-x86_64-20220913-dvd1.iso
+BASEOS_ISO=/home/dave/iso/CentOS-Stream-8-x86_64-20220913-dvd1.iso
 LOOP_DIR=/tmp/bootiso
 WORKING_DIR=/tmp/bootisoks
 CANDIDATE_KS=/home/dave/iso/kickstart/candidate-ks.cfg
