@@ -4,9 +4,9 @@ BOOT_ISO=/tmp/boot.iso
 BASEOS_ISO=/tmp/CentOS-Stream-9-latest-x86_64-dvd1.iso
 LOOP_DIR=/tmp/bootiso
 WORKING_DIR=/tmp/bootisoks
-CANDIDATE_KS=/home/dave/iso/kickstart/
+CANDIDATE_KS=/home/dave/iso/kickstart/candidate-ks.cfg
 DESTINATION_KS=$WORKING_DIR/isolinux/ks.cfg
-CANDIDATE_ISOLINUX_CFG=/home/dave/iso/kickstart/isolinux.cfg
+CANDIDATE_ISOLINUX_CFG=/home/dave/iso/kickstart/candidate-isolinux.cfg
 DESTINATION_ISOLINUX_CFG=$WORKING_DIR/isolinux/isolinux.cfg
 
 echo $DESTINATION_KS
@@ -35,3 +35,13 @@ sudo mount -o loop $BASEOS_ISO $LOOP_DIR
 cp -rT $LOOP_DIR $WORKING_DIR
 
 sudo umount $LOOP_DIR
+
+cp $CANDIDATE_KS $DESTINATION_KS
+cp $CANDIDATE_ISOLINUX_CFG $DESTINATION_ISOLINUX_CFG
+
+mkisofs -o $BOOT_ISO -b isolinux.bin -c boot.cat \
+-no-emul-boot -boot-load-size 4 -boot-info-table -V "CentOS-Stream-9-BaseOS-x86_64" \
+-R -J -v -T $WORKING_DIR/isolinux/. $WORKING_DIR/.
+
+isohybrid /tmp/boot.iso
+implantisomd5 /tmp/boot.iso
