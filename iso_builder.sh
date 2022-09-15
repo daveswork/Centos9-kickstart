@@ -38,7 +38,7 @@ cp $CANDIDATE_ISOLINUX_CFG $DESTINATION_ISOLINUX_CFG
 
 mkisofs -o $BOOT_ISO -b isolinux.bin -c boot.cat \
 -no-emul-boot -boot-load-size 4 -boot-info-table -V "CentOS-Stream-8-x86_64-dvd" \
--R -J -v -T $WORKING_DIR/isolinux/. $WORKING_DIR/.
+-R -J -joliet-long -v -T $WORKING_DIR/isolinux/. $WORKING_DIR/.
 
 isohybrid /tmp/boot.iso
 implantisomd5 /tmp/boot.iso
