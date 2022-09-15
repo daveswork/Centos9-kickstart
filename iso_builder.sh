@@ -9,9 +9,6 @@ DESTINATION_KS=$WORKING_DIR/isolinux/ks.cfg
 CANDIDATE_ISOLINUX_CFG=/home/dave/iso/kickstart/candidate-isolinux.cfg
 DESTINATION_ISOLINUX_CFG=$WORKING_DIR/isolinux/isolinux.cfg
 
-echo $DESTINATION_KS
-echo $DESTINATION_ISOLINUX_CFG
-
 if [[ -f $BOOT_ISO ]]; then
     echo "$BOOT_ISO exists."
     rm $BOOT_ISO
