@@ -1,5 +1,5 @@
 default vesamenu.c32
-timeout 30
+timeout 600
 
 display boot.msg
 
@@ -8,7 +8,7 @@ display boot.msg
 # the menu itself for as long as the screen remains in graphics mode.
 menu clear
 menu background splash.png
-menu title CentOS Stream 9
+menu title CentOS Stream 8-stream
 menu vshift 8
 menu rows 18
 menu margin 8
@@ -59,15 +59,15 @@ menu separator # insert an empty line
 menu separator # insert an empty line
 
 label linux
-  menu label ^Install CentOS Stream 9
-  menu default
+  menu label ^Install CentOS Stream 8-stream
   kernel vmlinuz
-  append initrd=initrd.img ip=dhcp inst.stage2=hd:LABEL=CentOS-Stream-8-x86_64-dvd inst.repo=cdrom inst.ks=cdrom quiet
+  append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-Stream-8-x86_64-dvd quiet
 
 label check
-  menu label Test this ^media & install CentOS Stream 9
+  menu label Test this ^media & install CentOS Stream 8-stream
+  menu default
   kernel vmlinuz
-  append initrd=initrd.img ip=dhcp inst.stage2=hd:LABEL=CentOS-Stream-8-x86_64-dvd inst.repo=cdrom inst.ks=cdrom rd.live.check quiet
+  append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-Stream-8-x86_64-dvd rd.live.check quiet
 
 menu separator # insert an empty line
 
@@ -75,15 +75,15 @@ menu separator # insert an empty line
 menu begin ^Troubleshooting
   menu title Troubleshooting
 
-label text
+label vesa
   menu indent count 5
-  menu label Install CentOS Stream 9 using ^text mode
+  menu label Install CentOS Stream 8-stream in ^basic graphics mode
   text help
 	Try this option out if you're having trouble installing
-	CentOS Stream 9.
+	CentOS Stream 8-stream.
   endtext
   kernel vmlinuz
-  append initrd=initrd.img inst.stage2=hd:LABELCentOS-Stream-8-x86_64-dvd inst.text quiet
+  append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-Stream-8-x86_64-dvd nomodeset quiet
 
 label rescue
   menu indent count 5
