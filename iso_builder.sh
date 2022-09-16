@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BOOT_ISO=/tmp/boot.iso
-BASEOS_ISO=/home/dave/iso/CentOS-Stream-8-x86_64-20220913-dvd1.iso
+BASEOS_ISO=/home/dave/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso
 LOOP_DIR=/tmp/bootiso
 WORKING_DIR=/tmp/bootisoks
 CANDIDATE_KS=/home/dave/iso/kickstart/candidate-ks.cfg
@@ -37,7 +37,7 @@ cp $CANDIDATE_KS $DESTINATION_KS
 cp $CANDIDATE_ISOLINUX_CFG $DESTINATION_ISOLINUX_CFG
 
 mkisofs -o $BOOT_ISO -b isolinux.bin -c boot.cat \
--no-emul-boot -boot-load-size 4 -boot-info-table -V "CentOS-Stream-8-x86_64-dvd" \
+-no-emul-boot -boot-load-size 4 -boot-info-table -V "CentOS-Stream-9-BaseOS-x86_64" \
 -R -J -joliet-long -v -T $WORKING_DIR/isolinux/. $WORKING_DIR/.
 
 isohybrid /tmp/boot.iso
