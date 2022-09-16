@@ -36,9 +36,12 @@ sudo umount $LOOP_DIR
 cp $CANDIDATE_KS $DESTINATION_KS
 cp $CANDIDATE_ISOLINUX_CFG $DESTINATION_ISOLINUX_CFG
 
+# sudo dnf install mkisofs
 mkisofs -o $BOOT_ISO -b isolinux.bin -c boot.cat \
 -no-emul-boot -boot-load-size 4 -boot-info-table -V "CentOS-Stream-9-BaseOS-x86_64" \
 -R -J -joliet-long -v -T $WORKING_DIR/isolinux/. $WORKING_DIR/.
 
 isohybrid /tmp/boot.iso
+
+# sudo dnf install isomd5sum
 implantisomd5 /tmp/boot.iso
