@@ -1,13 +1,14 @@
 #!/bin/bash
 
 BOOT_ISO=/tmp/boot.iso
-BASEOS_ISO=/home/dave/iso/CentOS-Stream-9-latest-x86_64-dvd1.iso
+BASEOS_ISO=../iso/CentOS-Stream-9-latest-x86_64-dvd1.iso
 LOOP_DIR=/tmp/bootiso
 WORKING_DIR=/tmp/bootisoks
-CANDIDATE_KS=/home/dave/iso/kickstart/candidate-ks.cfg
+CANDIDATE_KS=./candidate-ks.cfg
 DESTINATION_KS=$WORKING_DIR/isolinux/ks.cfg
-CANDIDATE_ISOLINUX_CFG=/home/dave/iso/kickstart/candidate-isolinux.cfg
+CANDIDATE_ISOLINUX_CFG=./candidate-isolinux.cfg
 DESTINATION_ISOLINUX_CFG=$WORKING_DIR/isolinux/isolinux.cfg
+
 
 if [[ -f $BOOT_ISO ]]; then
     echo "$BOOT_ISO exists."
