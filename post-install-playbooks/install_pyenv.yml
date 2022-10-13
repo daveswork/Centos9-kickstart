@@ -1,0 +1,7 @@
+---
+- name: install addtional packages
+  hosts: localhost
+  tasks:
+  - name: install pyenv
+    shell: 'curl https://pyenv.run | bash'
+

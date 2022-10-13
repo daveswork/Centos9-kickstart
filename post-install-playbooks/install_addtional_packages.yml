@@ -1,0 +1,36 @@
+---
+- name: install addtional packages
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: install additional dnf packages
+    dnf:
+      name: '{{ item }}'
+      state: present
+      update_cache: True
+    with_items:
+      - vim
+      - bind-utils
+      - docker
+      - '@Development tools'
+      - zlib
+      - zlib-devel
+      - bzip2-devel
+      - openssl-devel
+      - sqlite-devel
+      - readline-devel
+      - '@Virtualization Host'
+      - virt-top
+      - libguestfs-tools
+      - dnf-utils
+      - bridge-utils
+      - cockpit-machines
+
+  - name: enable libvirtd
+    systemd:
+      name: '{{ item }}'
+      enabled: yes
+      state: started
+    with_items:
+      - libvirtd
+      - cockpit.socket
