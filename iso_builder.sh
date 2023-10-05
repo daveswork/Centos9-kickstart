@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#test commit
+
 BOOT_ISO=/tmp/boot.iso
 BASEOS_ISO=../iso/CentOS-Stream-9-latest-x86_64-dvd1.iso
 LOOP_DIR=/tmp/bootiso
