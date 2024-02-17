@@ -1,0 +1,26 @@
+From
+https://www.informaticar.net/change-kvm-libvirt-default-storage-path/
+
+
+[root@localhost ~]# virsh pool-dumpxml default | grep -i path
+    <path>/var/lib/libvirt/images</path>
+[root@localhost ~]# virsh pool-destroy default
+Pool default destroyed
+[root@localhost ~]# virsh pool-list --all
+ Name       State      Autostart
+----------------------------------
+ default    inactive   yes
+ extended   active     yes
+ qemu       active     yes
+ tmp        active     yes
+
+[root@localhost ~]# ls /home/
+dave  qemu  vms
+[root@localhost ~]# virsh poil-edit default
+[root@localhost ~]# virsh pool-edit default
+
+[root@localhost ~]# virsh pool-start default
+
+[root@localhost ~]# virsh pool-dumpxml default |grep -i path
+    <path>/home/vms</path>
+[root@localhost ~]#
