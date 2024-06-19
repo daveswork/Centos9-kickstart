@@ -21,3 +21,28 @@
         - ubuntu-desktop
         - python3.12
         - synaptic
+        - build-essential
+        - zlib1g-dev
+        - libssl-dev 
+        - libbz2-dev 
+        - libreadline-dev 
+        - libsqlite3-dev 
+        - curl
+        - libncursesw5-dev 
+        - xz-utils 
+        - tk-dev 
+        - libxml2-dev 
+        - libxmlsec1-dev 
+        - libffi-dev 
+        - liblzma-dev
+        - gcc
+        - gconf2
+        - libasound2
+        - libnotify4
+        - libnspr4
+        - gdebi-core
+
+    # - name: Install additional snap packages
+    #   snap:
+    #     name:
+    #       - discord
