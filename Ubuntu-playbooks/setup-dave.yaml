@@ -1,0 +1,19 @@
+---
+- name: test book
+  hosts: localhost
+  tasks:
+
+    # - name: Install additional snap packages
+    #   become: yes
+    #   snap:
+    #     name:
+    #       - code
+    
+    - name: Install nvm
+      ansible.builtin.shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+      args:
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+
+
+

@@ -1,0 +1,23 @@
+---
+- name: test book
+  hosts: localhost
+  become: yes
+  tasks:
+
+    - name: Install apt repositories
+      apt_repository:
+        repo: '{{ item }}'
+      with_items:
+        - ppa:deadsnakes/ppa
+
+    - name: Install additional apt packages
+      apt:
+        name: '{{ item }}'
+        state: present
+        update_cache: True
+      with_items:
+        - git
+        - docker
+        - ubuntu-desktop
+        - python3.12
+        - synaptic
