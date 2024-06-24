@@ -18,7 +18,6 @@
       with_items:
         - git
         - docker
-        - ubuntu-desktop
         - python3.12
         - synaptic
         - build-essential
@@ -41,6 +40,7 @@
         - libnotify4
         - libnspr4
         - gdebi-core
+        - ubuntu-desktop
 
     # - name: Install additional snap packages
     #   snap:
