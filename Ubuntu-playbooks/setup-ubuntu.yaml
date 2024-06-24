@@ -17,7 +17,6 @@
         update_cache: True
       with_items:
         - git
-        - docker
         - python3.12
         - synaptic
         - build-essential
