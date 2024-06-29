@@ -40,6 +40,7 @@
         - libnspr4
         - gdebi-core
         - ubuntu-desktop
+        - xclip
 
     # - name: Install additional snap packages
     #   snap:
