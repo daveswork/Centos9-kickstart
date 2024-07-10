@@ -4,6 +4,13 @@
   become: yes
   tasks:
 
+    - name: Install additional snap packages
+      snap:
+        name:
+          - snap-store
+          - dissent
+
+
     - name: Install apt repositories
       apt_repository:
         repo: '{{ item }}'
@@ -41,8 +48,7 @@
         - gdebi-core
         - ubuntu-desktop
         - xclip
+        - fprintd
+        - libpam-fprintd
+        - terminator
 
-    # - name: Install additional snap packages
-    #   snap:
-    #     name:
-    #       - discord
