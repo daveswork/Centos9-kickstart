@@ -51,4 +51,9 @@
         - fprintd
         - libpam-fprintd
         - terminator
+        - vim
+
+    - name: Install VS Code
+      apt:
+        deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
 
