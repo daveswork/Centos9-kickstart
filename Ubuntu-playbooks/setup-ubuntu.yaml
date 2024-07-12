@@ -53,6 +53,7 @@
         - openssh-server
         - terminator
         - vim
+        - gnome-shell-extensions
 
     - name: Install VS Code
       apt:
