@@ -50,6 +50,7 @@
         - xclip
         - fprintd
         - libpam-fprintd
+        - openssh-server
         - terminator
         - vim
 
