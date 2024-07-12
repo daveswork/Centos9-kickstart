@@ -54,6 +54,7 @@
         - terminator
         - vim
         - gnome-shell-extensions
+        - chrome-gnome-shell
 
     - name: Install VS Code
       apt:
