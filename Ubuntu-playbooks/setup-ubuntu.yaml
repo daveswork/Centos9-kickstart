@@ -54,6 +54,7 @@
         - terminator
         - vim
         - gnome-shell-extensions
+        - gnome-browser-connector
 
     - name: Install VS Code
       apt:
