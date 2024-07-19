@@ -9,6 +9,7 @@
         name:
           - snap-store
           - dissent
+          - postman
 
 
     - name: Install apt repositories
