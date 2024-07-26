@@ -57,6 +57,7 @@
         - gnome-shell-extensions
         - chrome-gnome-shell
         - curl
+        - jq
 
     - name: Install VS Code
       apt:
