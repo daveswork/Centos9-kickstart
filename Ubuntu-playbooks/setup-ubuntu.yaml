@@ -58,6 +58,7 @@
         - chrome-gnome-shell
         - curl
         - jq
+        - chromium-browser
 
     - name: Install VS Code
       apt:
