@@ -49,6 +49,7 @@
         - gdebi-core
         - ubuntu-desktop
         - xclip
+        - xsel
         - fprintd
         - libpam-fprintd
         - openssh-server
