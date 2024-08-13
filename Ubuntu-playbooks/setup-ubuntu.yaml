@@ -60,6 +60,7 @@
         - curl
         - jq
         - chromium-browser
+        - shutter
 
     - name: Install VS Code
       apt:
