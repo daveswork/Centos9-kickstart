@@ -10,6 +10,7 @@
           - snap-store
           - dissent
           - postman
+          - dbeaver-ce
 
 
     - name: Install apt repositories
