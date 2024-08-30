@@ -61,6 +61,8 @@
         - jq
         - chromium-browser
         - shutter
+        - sqlitebrowser
+        - sqlite3
 
     - name: Install VS Code
       apt:
