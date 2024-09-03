@@ -64,6 +64,7 @@
         - shutter
         - sqlitebrowser
         - sqlite3
+        - keychain
 
     - name: Install VS Code
       apt:
