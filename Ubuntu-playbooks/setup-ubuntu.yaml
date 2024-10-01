@@ -65,6 +65,8 @@
         - sqlitebrowser
         - sqlite3
         - keychain
+        - open-vm-tools
+        - open-vm-tools-desktop
 
     - name: Install VS Code
       apt:
