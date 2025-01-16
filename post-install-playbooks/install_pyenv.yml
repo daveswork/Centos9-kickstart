@@ -5,3 +5,6 @@
   - name: install pyenv
     shell: 'curl https://pyenv.run | bash'
 
+  - name: update path
+    script: files/pyenv_bash.sh
+

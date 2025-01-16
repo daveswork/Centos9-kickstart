@@ -1,0 +1,74 @@
+---
+- name: test book
+  hosts: localhost
+  become: yes
+  tasks:
+
+    - name: Install additional snap packages
+      snap:
+        name:
+          - snap-store
+          - dissent
+          - postman
+          - dbeaver-ce
+
+
+    - name: Install apt repositories
+      apt_repository:
+        repo: '{{ item }}'
+      with_items:
+        - ppa:deadsnakes/ppa
+
+    - name: Install additional apt packages
+      apt:
+        name: '{{ item }}'
+        state: present
+        update_cache: True
+      with_items:
+        - git
+        - python3.12
+        - synaptic
+        - build-essential
+        - zlib1g-dev
+        - libssl-dev 
+        - libbz2-dev 
+        - libreadline-dev 
+        - libsqlite3-dev 
+        - curl
+        - libncursesw5-dev 
+        - xz-utils 
+        - tk-dev 
+        - libxml2-dev 
+        - libxmlsec1-dev 
+        - libffi-dev 
+        - liblzma-dev
+        - gcc
+        - gconf2
+        - libasound2
+        - libnotify4
+        - libnspr4
+        - gdebi-core
+        - ubuntu-desktop
+        - xclip
+        - xsel
+        - fprintd
+        - libpam-fprintd
+        - openssh-server
+        - terminator
+        - vim
+        - gnome-shell-extensions
+        - chrome-gnome-shell
+        - curl
+        - jq
+        - chromium-browser
+        - shutter
+        - sqlitebrowser
+        - sqlite3
+        - keychain
+        - open-vm-tools
+        - open-vm-tools-desktop
+
+    - name: Install VS Code
+      apt:
+        deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
+
